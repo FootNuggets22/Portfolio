@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import logo from '../assets/logo.png'
 import './Header.css'
 
 const Header = () => {
@@ -27,7 +26,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="logo">
-          <img src={logo} alt="Tutanekai Manuera" className="logo-image" />
+          <h2>Tutanekai Manuera</h2>
         </div>
         
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Heart, Github, Linkedin, Mail, ArrowUp } from 'lucide-react'
-import logo from '../assets/logo.png'
 import './Footer.css'
 
 const Footer = () => {
@@ -16,7 +15,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-main">
             <div className="footer-brand">
-              <img src={logo} alt="Tutanekai Manuera" className="footer-logo" />
+              <h3>Tutanekai Manuera</h3>
               <p>Building digital experiences with passion and precision.</p>
               <div className="social-links">
                 <a href="https://github.com/FootNuggets22" target="_blank" rel="noopener noreferrer">
