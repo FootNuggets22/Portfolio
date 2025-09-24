@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Check</title>
+</head>
+<body>
+    <h1>Testing File Paths</h1>
+    <p>If you can see this page, HTML files work.</p>
+    
+    <h2>Testing CSS:</h2>
+    <link rel="stylesheet" href="/assets/index-CcQkAc__.css">
+    <p style="color: red;">This text should be styled if CSS loads.</p>
+    
+    <h2>Testing JavaScript:</h2>
+    <div id="js-test">JavaScript not loaded</div>
+    
+    <script>
+        document.getElementById('js-test').innerHTML = 'Basic JavaScript works!';
+        
+        // Try to load your main JS file
+        var script = document.createElement('script');
+        script.src = '/assets/index-BmBA9fTe.js';
+        script.onload = function() {
+            console.log('Main JS file loaded successfully!');
+        };
+        script.onerror = function() {
+            console.log('ERROR: Could not load main JS file');
+            document.getElementById('js-test').innerHTML += '<br>ERROR: Main JS file failed to load (404)';
+        };
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
