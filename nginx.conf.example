@@ -1,0 +1,19 @@
+# Nginx configuration for React apps
+# Add this to your server block or .conf file
+
+location ~* \.js$ {
+    add_header Content-Type application/javascript;
+}
+
+location ~* \.mjs$ {
+    add_header Content-Type application/javascript;
+}
+
+location ~* \.css$ {
+    add_header Content-Type text/css;
+}
+
+# Handle client-side routing
+location / {
+    try_files $uri $uri/ /index.html;
+}
