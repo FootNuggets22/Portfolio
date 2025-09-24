@@ -100,22 +100,36 @@ const About = () => {
               <div className="value-item">
                 <h4>Clean Code</h4>
                 <p>
-                  Writing maintainable, readable, and efficient code that stands
-                  the test of time.
+                  For me, writing clean code is about making things clear and
+                  easy to understand. I want my work to be something that others
+                  can read without confusion and continue to build on in the
+                  future. That means choosing good names, keeping logic simple,
+                  and avoiding unnecessary complexity. Code written this way
+                  lasts longer and is much easier to maintain and improve.
                 </p>
               </div>
               <div className="value-item">
-                <h4>User Experience</h4>
+                <h4>Problem Solving</h4>
                 <p>
-                  Creating intuitive and delightful experiences that users love
-                  to interact with.
+                  I enjoy breaking down complex problems and finding simple,
+                  effective solutions. For me, solving problems is not just
+                  about getting things to work but doing so in a way that is
+                  efficient and reliable. I like to step back, think through
+                  different approaches, and choose the one that makes the most
+                  sense long term. There is real satisfaction in turning
+                  something challenging into something that feels
+                  straightforward.
                 </p>
               </div>
               <div className="value-item">
                 <h4>Continuous Learning</h4>
                 <p>
-                  Staying updated with the latest technologies and best
-                  practices in development.
+                  I enjoy learning new things and see it as an important part of
+                  being a developer. Technology is always changing, and I like
+                  the challenge of keeping up with those changes. Every new tool
+                  or skill I pick up helps me build better solutions and solve
+                  problems in new ways. Each project gives me a chance to grow
+                  and push myself further.
                 </p>
               </div>
             </div>
