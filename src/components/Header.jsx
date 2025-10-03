@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import './Header.css'
 
-const Header = () => {
+const Header = ({ currentPage, setCurrentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -14,10 +14,18 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+  const handleNavClick = (page, sectionId = null) => {
+    if (page === 'home' && sectionId) {
+      setCurrentPage('home')
+      // Small delay to ensure the home page renders first
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    } else {
+      setCurrentPage(page)
     }
     setIsMenuOpen(false)
   }
@@ -25,15 +33,43 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <div className="logo">
+        <div className="logo" onClick={() => handleNavClick('home')}>
           <h2>Tutanekai Manuera</h2>
         </div>
         
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-          <a href="#home" onClick={() => scrollToSection('home')}>Home</a>
-          <a href="#about" onClick={() => scrollToSection('about')}>About</a>
-          <a href="#skills" onClick={() => scrollToSection('skills')}>Skills</a>
-          <a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a>
+          <a 
+            href="#home" 
+            onClick={(e) => { e.preventDefault(); handleNavClick('home') }}
+            className={currentPage === 'home' ? 'active' : ''}
+          >
+            Home
+          </a>
+          <a 
+            href="#about" 
+            onClick={(e) => { e.preventDefault(); handleNavClick('home', 'about') }}
+          >
+            About
+          </a>
+          <a 
+            href="#skills" 
+            onClick={(e) => { e.preventDefault(); handleNavClick('home', 'skills') }}
+          >
+            Skills
+          </a>
+          <a 
+            href="#pepeha" 
+            onClick={(e) => { e.preventDefault(); handleNavClick('pepeha') }}
+            className={currentPage === 'pepeha' ? 'active' : ''}
+          >
+            Pepeha
+          </a>
+          <a 
+            href="#contact" 
+            onClick={(e) => { e.preventDefault(); handleNavClick('home', 'contact') }}
+          >
+            Contact
+          </a>
         </nav>
 
         <button 

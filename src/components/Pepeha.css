@@ -1,0 +1,137 @@
+.pepeha-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 100px 0 50px 0;
+}
+
+.pepeha-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pepeha-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h1 {
+  font-size: 3rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pepeha-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pepeha-text {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+  border-radius: 15px;
+  color: white;
+}
+
+.pepeha-line {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pepeha-line:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.maori-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fbbf24;
+  font-family: 'Georgia', serif;
+}
+
+.english-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pepeha-explanation {
+  color: #374151;
+}
+
+.pepeha-explanation h3 {
+  font-size: 1.3rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #047857;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.pepeha-explanation p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: #4b5563;
+}
+
+.pepeha-explanation p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pepeha {
+    padding: 60px 0;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .pepeha-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .pepeha-text {
+    padding: 1.5rem;
+  }
+
+  .maori-text {
+    font-size: 1.3rem;
+  }
+
+  .english-text {
+    font-size: 1rem;
+  }
+
+  .pepeha-line {
+    margin-bottom: 1rem;
+    padding: 0.75rem 0;
+  }
+}
