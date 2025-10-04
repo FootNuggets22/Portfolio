@@ -165,10 +165,11 @@
 }
 
 .values {
-  background: white;
+  background: var(--bg-secondary);
   padding: 2.5rem;
   border-radius: 20px;
   box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
 }
 
 .values h3 {
@@ -188,9 +189,10 @@
 .value-item {
   text-align: center;
   padding: 1.5rem;
-  background: #f8fafc;
+  background: var(--bg-primary);
   border-radius: 15px;
   transition: transform 0.3s ease;
+  border: 1px solid var(--border-color);
 }
 
 .value-item:hover {
@@ -232,8 +234,10 @@
   }
 
   .stat-card {
-    padding: 1.25rem;
-    gap: 1rem;
+    padding: 1.5rem;
+    gap: 1.2rem;
+    height: 100px;
+    min-width: auto;
   }
 
   .stat-icon {
@@ -243,7 +247,12 @@
   }
 
   .stat-card h4 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  .stat-card p {
+    font-size: 0.85rem;
+    white-space: normal;
   }
 
   .values-grid {

@@ -47,9 +47,9 @@
 .pepeha-text {
   margin-bottom: 3rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+  background: var(--bg-secondary);
   border-radius: 15px;
-  color: white;
+  color: var(--text-primary);
 }
 
 .pepeha-line {
@@ -57,7 +57,7 @@
   flex-direction: column;
   margin-bottom: 1.5rem;
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .pepeha-line:last-child {
@@ -69,14 +69,14 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #fbbf24;
+  color: var(--text-primary);
   font-family: 'Georgia', serif;
 }
 
 .english-text {
   font-size: 1.1rem;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
 }
 
 .pepeha-explanation {
@@ -88,7 +88,7 @@
   color: var(--text-primary);
   margin-bottom: 1rem;
   font-weight: 600;
-  border-bottom: 2px solid #047857;
+  border-bottom: 2px solid var(--border-color);
   padding-bottom: 0.5rem;
   display: inline-block;
 }
