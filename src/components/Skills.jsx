@@ -113,14 +113,21 @@ const Skills = () => {
                 <p>2025</p>
               </div>
               <div className="cert-item">
-                <h4>Certificate in Tech Career Exploration and Development</h4>
+                <h4>Certification in Applied Digital Technology Product Solutions</h4>
                 <p>2025</p>
               </div>
               <div className="cert-item">
                 <h4>Certificate in Technology Product Development Essentials</h4>
+                <p>2025</p>
+              </div>
+              <div className="cert-item">
+                <h4>Certificate in Tech Career Exploration and Development</h4>
                 <p>2024</p>
               </div>
-              
+              <div className="cert-item">
+                <h4>Certificate in 3D Design and Robotics</h4>
+                <p>2023</p>
+              </div>
             </div>
           </motion.div>
         </motion.div>

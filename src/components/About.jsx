@@ -71,21 +71,21 @@ const About = () => {
               <div className="stats-grid">
                 <div className="stat-card">
                   <User className="stat-icon" />
-                  <div>
+                  <div className="stat-content">
                     <h4>2+</h4>
                     <p>Years Experience</p>
                   </div>
                 </div>
                 <div className="stat-card">
                   <Target className="stat-icon" />
-                  <div>
+                  <div className="stat-content">
                     <h4>10+</h4>
                     <p>Projects Completed</p>
                   </div>
                 </div>
                 <div className="stat-card">
                   <Heart className="stat-icon" />
-                  <div>
+                  <div className="stat-content">
                     <h4>100%</h4>
                     <p>Client Satisfaction</p>
                   </div>

@@ -59,7 +59,7 @@ const Hero = () => {
             >
               View My Work
             </a>
-            <button className="cta-button secondary">
+            <button className="cta-button primary">
               Download CV
             </button>
           </motion.div>

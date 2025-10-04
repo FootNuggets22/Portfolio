@@ -151,7 +151,7 @@
   color: rgba(255, 255, 255, 0.7);
   transition: color 0.3s ease;
   animation: bounce 2s ease-in-out infinite;
-  margin-top: 2rem;
+  margin-top: 7rem;
 }
 
 .scroll-indicator:hover {
