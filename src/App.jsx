@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './App.css'
+import { ThemeProvider } from './contexts/ThemeContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -16,13 +17,14 @@ function App() {
     switch(currentPage) {
       case 'pepeha':
         return <Pepeha />
+      case 'skills':
+        return <Skills />
       case 'home':
       default:
         return (
           <>
             <Hero />
             <About />
-            <Skills />
             <Contact />
           </>
         )
@@ -30,12 +32,14 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      {renderPage()}
-      <Footer />
-      <AIChatbot />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        {renderPage()}
+        <Footer currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        <AIChatbot />
+      </div>
+    </ThemeProvider>
   )
 }
 

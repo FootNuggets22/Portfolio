@@ -1,6 +1,6 @@
 .projects {
   padding: 100px 0;
-  background: #f8fafc;
+  background: var(--bg-primary);
 }
 
 .projects-content {
@@ -16,14 +16,14 @@
 
 .section-header h2 {
   font-size: 2.5rem;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .section-header p {
   font-size: 1.1rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -41,25 +41,25 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.8rem 1.5rem;
-  background: white;
-  border: 2px solid #e5e7eb;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
   border-radius: 50px;
-  color: #6b7280;
+  color: var(--text-secondary);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .filter-btn:hover {
-  border-color: #2563eb;
-  color: #2563eb;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
   transform: translateY(-2px);
 }
 
 .filter-btn.active {
-  background: #2563eb;
-  border-color: #2563eb;
-  color: white;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--text-primary);
 }
 
 .projects-grid {
@@ -69,15 +69,15 @@
 }
 
 .project-card {
-  background: white;
+  background: var(--bg-secondary);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   transition: all 0.3s ease;
 }
 
 .project-card:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-xl);
 }
 
 .project-image {
@@ -126,16 +126,16 @@
   justify-content: center;
   width: 50px;
   height: 50px;
-  background: white;
-  color: #2563eb;
+  background: var(--bg-primary);
+  color: var(--accent-color);
   border-radius: 50%;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .project-link:hover {
-  background: #2563eb;
-  color: white;
+  background: var(--accent-color);
+  color: var(--text-primary);
   transform: scale(1.1);
 }
 
@@ -145,13 +145,13 @@
 
 .project-content h3 {
   font-size: 1.3rem;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 0.8rem;
   font-weight: 600;
 }
 
 .project-content p {
-  color: #6b7280;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
@@ -164,19 +164,19 @@
 }
 
 .tech-tag {
-  background: #f3f4f6;
-  color: #374151;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
 }
 
 .tech-tag:hover {
-  background: #2563eb;
-  color: white;
-  border-color: #2563eb;
+  background: var(--accent-color);
+  color: var(--text-primary);
+  border-color: var(--accent-color);
 }
 
 @media (max-width: 768px) {

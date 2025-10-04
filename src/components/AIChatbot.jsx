@@ -173,7 +173,7 @@ SKILLS: JavaScript (95%), React (90%), Node.js (90%), Express.js (90%), TypeScri
 PORTFOLIO SECTIONS:
 - Home: Hero section with introduction
 - About: Background, values, and experience details
-- Skills: Technical skills with proficiency levels
+- Skills: Dedicated page showcasing technical skills with proficiency levels
 - Pepeha: Traditional Māori introduction with cultural connections and whakapapa
 - Contact: Contact form and information
 

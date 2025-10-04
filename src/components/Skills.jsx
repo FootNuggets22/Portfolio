@@ -60,17 +60,16 @@ const Skills = () => {
   }
 
   return (
-    <section id="skills" className="skills">
+    <div className="skills-page">
       <div className="container">
         <motion.div
           className="skills-content"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          animate="visible"
         >
           <motion.div className="section-header" variants={itemVariants}>
-            <h2>Skills & Technologies</h2>
+            <h1>Skills & Technologies</h1>
             <p>The tools and technologies I work with</p>
           </motion.div>
 
@@ -126,7 +125,7 @@ const Skills = () => {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </div>
   )
 }
 

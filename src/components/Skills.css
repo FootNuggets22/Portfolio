@@ -1,6 +1,13 @@
-.skills {
-  padding: 100px 0;
-  background: white;
+.skills-page {
+  min-height: 100vh;
+  padding: 100px 0 50px 0;
+  background: var(--bg-primary);
+}
+
+.skills-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .skills-content {
@@ -14,11 +21,12 @@
   margin-bottom: 4rem;
 }
 
-.section-header h2 {
-  font-size: 2.5rem;
-  color: #1f2937;
+.section-header h1 {
+  font-size: 3rem;
+  color: var(--text-primary);
   margin-bottom: 1rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .section-header p {
@@ -128,7 +136,7 @@
 
 .certifications h3 {
   font-size: 1.5rem;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 600;
@@ -155,14 +163,14 @@
 
 .cert-item h4 {
   font-size: 1rem;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
 .cert-item p {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   margin: 0;
 }
 

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import './Header.css'
+import logo from '../assets/logo.png'
+import ThemeToggle from './ThemeToggle'
 
 const Header = ({ currentPage, setCurrentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -33,11 +35,14 @@ const Header = ({ currentPage, setCurrentPage }) => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <div className="logo" onClick={() => handleNavClick('home')}>
-          <h2>Tutanekai Manuera</h2>
+        <div className="header-left">
+          <div className="logo" onClick={() => handleNavClick('home')}>
+            <img src={logo} alt="Tutanekai Manuera" className="logo-image" />
+          </div>
         </div>
         
-        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+        <div className="header-right">
+          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <a 
             href="#home" 
             onClick={(e) => { e.preventDefault(); handleNavClick('home') }}
@@ -53,7 +58,8 @@ const Header = ({ currentPage, setCurrentPage }) => {
           </a>
           <a 
             href="#skills" 
-            onClick={(e) => { e.preventDefault(); handleNavClick('home', 'skills') }}
+            onClick={(e) => { e.preventDefault(); handleNavClick('skills') }}
+            className={currentPage === 'skills' ? 'active' : ''}
           >
             Skills
           </a>
@@ -72,13 +78,16 @@ const Header = ({ currentPage, setCurrentPage }) => {
           </a>
         </nav>
 
-        <button 
-          className="menu-toggle"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <ThemeToggle />
+
+          <button 
+            className="menu-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
     </header>
   )
