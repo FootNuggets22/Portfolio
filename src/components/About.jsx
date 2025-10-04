@@ -54,8 +54,7 @@ const About = () => {
                   I've worked on projects ranging from AI-driven mock interview
                   assistants to product comparison platforms and Māori language
                   learning tools. I'm especially passionate about creating
-                  solutions that are both people-focused and technically robust
-                  — bridging modern technology with meaningful, real-world
+                  solutions that are both people-focused and technically robust, bridging modern technology with meaningful, real-world
                   impact.
                 </p>
                 <p>
