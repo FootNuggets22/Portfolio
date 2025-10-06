@@ -8,6 +8,16 @@ const Hero = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const downloadCV = () => {
+    const link = document.createElement('a')
+    link.href = '/Tutanekai-Manuera-Resume.pdf'
+    link.download = 'Tutanekai-Manuera-Resume.pdf'
+    link.target = '_blank'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <section id="home" className="hero">
       <div className="hero-container">
@@ -59,7 +69,7 @@ const Hero = () => {
             >
               View My Work
             </a>
-            <button className="cta-button primary">
+            <button className="cta-button primary" onClick={downloadCV}>
               Download CV
             </button>
           </motion.div>
