@@ -1,9 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { User, Heart, Target } from "lucide-react";
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../data/translations';
 import "./About.css";
 
 const About = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -34,34 +39,22 @@ const About = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           <motion.div className="section-header" variants={itemVariants}>
-            <h2>About Me</h2>
-            <p>Get to know me better</p>
+            <h2>{t.about.title}</h2>
+            <p>{t.about.subtitle}</p>
           </motion.div>
 
           <div className="about-grid">
             <motion.div className="about-text" variants={itemVariants}>
               <div className="text-content">
-                <h3>Hello! I'm Tu, a passionate developer</h3>
+                <h3>{t.about.intro}</h3>
                 <p>
-                  I am a bilingual programmer fluent in Te Reo Māori and
-                  English. I enjoy building applications that combine technical
-                  skill with creativity and cultural understanding, whether
-                  that's designing intuitive user interfaces, developing
-                  AI-powered tools, or crafting apps that make learning and
-                  everyday tasks simpler.
+                  {t.about.description1}
                 </p>
                 <p>
-                  I've worked on projects ranging from AI-driven mock interview
-                  assistants to product comparison platforms and Māori language
-                  learning tools. I'm especially passionate about creating
-                  solutions that are both people-focused and technically robust, bridging modern technology with meaningful, real-world
-                  impact.
+                  {t.about.description2}
                 </p>
                 <p>
-                  Outside of coding, I'm driven by curiosity and
-                  problem-solving. I thrive on learning new technologies,
-                  turning ideas into working prototypes, and refining them into
-                  practical, user-friendly products.
+                  {t.about.description3}
                 </p>
               </div>
             </motion.div>
@@ -72,21 +65,21 @@ const About = () => {
                   <User className="stat-icon" />
                   <div className="stat-content">
                     <h4>2+</h4>
-                    <p>Years Experience</p>
+                    <p>{t.about.stats.experience}</p>
                   </div>
                 </div>
                 <div className="stat-card">
                   <Target className="stat-icon" />
                   <div className="stat-content">
                     <h4>10+</h4>
-                    <p>Projects Completed</p>
+                    <p>{t.about.stats.projects}</p>
                   </div>
                 </div>
                 <div className="stat-card">
                   <Heart className="stat-icon" />
                   <div className="stat-content">
                     <h4>100%</h4>
-                    <p>Client Satisfaction</p>
+                    <p>{t.about.stats.satisfaction}</p>
                   </div>
                 </div>
               </div>
@@ -94,41 +87,24 @@ const About = () => {
           </div>
 
           <motion.div className="values" variants={itemVariants}>
-            <h3>What I Value</h3>
+            <h3>{t.about.values.title}</h3>
             <div className="values-grid">
               <div className="value-item">
-                <h4>Clean Code</h4>
+                <h4>{t.about.values.cleanCode.title}</h4>
                 <p>
-                  For me, writing clean code is about making things clear and
-                  easy to understand. I want my work to be something that others
-                  can read without confusion and continue to build on in the
-                  future. That means choosing good names, keeping logic simple,
-                  and avoiding unnecessary complexity. Code written this way
-                  lasts longer and is much easier to maintain and improve.
+                  {t.about.values.cleanCode.description}
                 </p>
               </div>
               <div className="value-item">
-                <h4>Problem Solving</h4>
+                <h4>{t.about.values.problemSolving.title}</h4>
                 <p>
-                  I enjoy breaking down complex problems and finding simple,
-                  effective solutions. For me, solving problems is not just
-                  about getting things to work but doing so in a way that is
-                  efficient and reliable. I like to step back, think through
-                  different approaches, and choose the one that makes the most
-                  sense long term. There is real satisfaction in turning
-                  something challenging into something that feels
-                  straightforward.
+                  {t.about.values.problemSolving.description}
                 </p>
               </div>
               <div className="value-item">
-                <h4>Continuous Learning</h4>
+                <h4>{t.about.values.learning.title}</h4>
                 <p>
-                  I enjoy learning new things and see it as an important part of
-                  being a developer. Technology is always changing, and I like
-                  the challenge of keeping up with those changes. Every new tool
-                  or skill I pick up helps me build better solutions and solve
-                  problems in new ways. Each project gives me a chance to grow
-                  and push myself further.
+                  {t.about.values.learning.description}
                 </p>
               </div>
             </div>

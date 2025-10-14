@@ -3,10 +3,15 @@ import { Menu, X } from 'lucide-react'
 import './Header.css'
 import logo from '../assets/logo.png'
 import ThemeToggle from './ThemeToggle'
+import LanguageToggle from './LanguageToggle'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 
 const Header = ({ currentPage, setCurrentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const { language } = useLanguage()
+  const t = translations[language]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +30,12 @@ const Header = ({ currentPage, setCurrentPage }) => {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' })
         }
+      }, 100)
+    } else if (page === 'home' && !sectionId) {
+      setCurrentPage('home')
+      // Scroll to top of the page when home is clicked
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
       }, 100)
     } else {
       setCurrentPage(page)
@@ -48,37 +59,40 @@ const Header = ({ currentPage, setCurrentPage }) => {
             onClick={(e) => { e.preventDefault(); handleNavClick('home') }}
             className={currentPage === 'home' ? 'active' : ''}
           >
-            Home
+            {t.nav.home}
           </a>
           <a 
             href="#about" 
             onClick={(e) => { e.preventDefault(); handleNavClick('home', 'about') }}
           >
-            About
+            {t.nav.about}
           </a>
           <a 
             href="#skills" 
             onClick={(e) => { e.preventDefault(); handleNavClick('skills') }}
             className={currentPage === 'skills' ? 'active' : ''}
           >
-            Skills
+            {t.nav.skills}
           </a>
           <a 
             href="#pepeha" 
             onClick={(e) => { e.preventDefault(); handleNavClick('pepeha') }}
             className={currentPage === 'pepeha' ? 'active' : ''}
           >
-            Pepeha
+            {t.nav.pepeha}
           </a>
           <a 
             href="#contact" 
             onClick={(e) => { e.preventDefault(); handleNavClick('home', 'contact') }}
           >
-            Contact
+            {t.nav.contact}
           </a>
         </nav>
 
-          <ThemeToggle />
+          <div className="header-controls">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
 
           <button 
             className="menu-toggle"

@@ -1,8 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 import './Pepeha.css'
 
 const Pepeha = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -32,8 +36,8 @@ const Pepeha = () => {
           animate="visible"
         >
           <motion.div className="section-header" variants={itemVariants}>
-            <h1>Taku Pepeha</h1>
-            <p>My introduction in Te Reo Māori</p>
+            <h1>{t.pepeha.title}</h1>
+            <p>{t.pepeha.subtitle}</p>
           </motion.div>
 
           <motion.div className="pepeha-card" variants={itemVariants}>
@@ -75,27 +79,19 @@ const Pepeha = () => {
             </div>
             
             <div className="pepeha-explanation">
-              <h3>About Pepeha</h3>
+              <h3>{t.pepeha.explanation.title}</h3>
               <p>
-                A pepeha is a traditional Māori introduction that connects me to my whakapapa (genealogy) 
-                and tūrangawaewae (places of belonging). It establishes my identity through my connections 
-                to the natural world and ancestral places that have shaped my people for generations.
+                {t.pepeha.explanation.description}
               </p>
               
-              <h3>My Whakapapa</h3>
+              <h3>{t.pepeha.whakapapaTitle}</h3>
               <p>
-                My pepeha reflects the richness of my heritage, connecting me to multiple waka (canoes), 
-                maunga (mountains), awa (rivers), marae (meeting grounds), iwi (tribes), and hapū (subtribes). 
-                From the geothermal landscapes of Te Arawa to the coastal regions of Ngāti Porou, 
-                my ancestry spans across Aotearoa, bringing diverse perspectives and cultural knowledge.
+                {t.pepeha.whakapapaDescription}
               </p>
               
-              <h3>Cultural Connection in Development</h3>
+              <h3>{t.pepeha.connectionTitle}</h3>
               <p>
-                As a bilingual programmer fluent in Te Reo Māori and English, I bring this rich cultural 
-                understanding to my work. My multi-tribal heritage teaches me the value of collaboration, 
-                respect for diverse perspectives, and the importance of building bridges between communities 
-                through technology.
+                {t.pepeha.connectionDescription}
               </p>
             </div>
           </motion.div>

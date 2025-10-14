@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.css'
 import { ThemeProvider } from './contexts/ThemeContext'
+import { LanguageProvider } from './contexts/LanguageContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -33,12 +34,14 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="App">
-        <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-        {renderPage()}
-        <Footer currentPage={currentPage} setCurrentPage={setCurrentPage} />
-        <AIChatbot />
-      </div>
+      <LanguageProvider>
+        <div className="App">
+          <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          {renderPage()}
+          <Footer currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <AIChatbot />
+        </div>
+      </LanguageProvider>
     </ThemeProvider>
   )
 }

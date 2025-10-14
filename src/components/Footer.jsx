@@ -1,8 +1,12 @@
 import React from 'react'
 import { Heart, Github, Linkedin, Mail, ArrowUp } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 import './Footer.css'
 
 const Footer = ({ currentPage, setCurrentPage }) => {
+  const { language } = useLanguage()
+  const t = translations[language]
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -33,7 +37,7 @@ const Footer = ({ currentPage, setCurrentPage }) => {
               <h3 onClick={() => handleNavClick('home')} style={{cursor: 'pointer'}}>
                 Tutanekai Manuera
               </h3>
-              <p>Building digital experiences with passion and precision.</p>
+              <p>{t.footer.tagline}</p>
               <div className="social-links">
                 <a href="https://github.com/FootNuggets22" target="_blank" rel="noopener noreferrer">
                   <Github size={20} />
@@ -49,36 +53,36 @@ const Footer = ({ currentPage, setCurrentPage }) => {
 
             <div className="footer-links">
               <div className="link-group">
-                <h4>Navigation</h4>
+                <h4>{t.footer.navigation}</h4>
                 <button 
                   onClick={() => handleNavClick('home')}
                   className="footer-link"
                 >
-                  Home
+                  {t.nav.home}
                 </button>
                 <button 
                   onClick={() => handleNavClick('home', 'about')}
                   className="footer-link"
                 >
-                  About
+                  {t.nav.about}
                 </button>
                 <button 
                   onClick={() => handleNavClick('skills')}
                   className="footer-link"
                 >
-                  Skills
+                  {t.nav.skills}
                 </button>
                 <button 
                   onClick={() => handleNavClick('pepeha')}
                   className="footer-link"
                 >
-                  Pepeha
+                  {t.nav.pepeha}
                 </button>
                 <button 
                   onClick={() => handleNavClick('home', 'contact')}
                   className="footer-link"
                 >
-                  Contact
+                  {t.nav.contact}
                 </button>
               </div>
 
@@ -88,12 +92,12 @@ const Footer = ({ currentPage, setCurrentPage }) => {
           <div className="footer-bottom">
             <div className="copyright">
               <p>
-                Made with <Heart size={16} className="heart" /> by Tu © {currentYear}. 
+                {t.footer.madeWith} <Heart size={16} className="heart" /> {t.footer.by} {currentYear}. 
                 All rights reserved.
               </p>
             </div>
             
-            <button className="scroll-top" onClick={scrollToTop}>
+            <button className="scroll-top" onClick={scrollToTop} aria-label={t.footer.backToTop}>
               <ArrowUp size={20} />
             </button>
           </div>

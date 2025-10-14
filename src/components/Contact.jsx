@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 import './Contact.css'
 
 const Contact = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -62,16 +66,15 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div className="section-header" variants={itemVariants}>
-            <h2>Get In Touch</h2>
-            <p>Let's discuss your project and how we can work together</p>
+            <h2>{t.contact.title}</h2>
+            <p>{t.contact.subtitle}</p>
           </motion.div>
 
           <div className="contact-grid">
             <motion.div className="contact-info" variants={itemVariants}>
-              <h3>Let's talk about your project</h3>
+              <h3>{t.contact.projectTitle}</h3>
               <p>
-                I'm always open to discussing new opportunities, creative projects, 
-                or just having a friendly chat about technology and development.
+                {t.contact.projectDescription}
               </p>
 
               <div className="contact-methods">
@@ -80,7 +83,7 @@ const Contact = () => {
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h4>Email</h4>
+                    <h4>{t.contact.info.email}</h4>
                     <p>tutanekaitapiata@gmail.com</p>
                   </div>
                 </div>
@@ -90,7 +93,7 @@ const Contact = () => {
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h4>Phone</h4>
+                    <h4>{t.contact.info.phone}</h4>
                     <p>+64 210771464</p>
                   </div>
                 </div>
@@ -100,18 +103,18 @@ const Contact = () => {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h4>Location</h4>
+                    <h4>{t.contact.info.location}</h4>
                     <p>Rotorua, New Zealand</p>
                   </div>
                 </div>
               </div>
 
               <div className="availability">
-                <h4>Availability</h4>
-                <p>I'm currently available for freelance projects and full-time opportunities.</p>
+                <h4>{t.contact.availability.title}</h4>
+                <p>{t.contact.availability.status}</p>
                 <div className="status">
                   <div className="status-indicator"></div>
-                  <span>Available for work</span>
+                  <span>{t.contact.availability.response}</span>
                 </div>
               </div>
             </motion.div>
@@ -119,7 +122,7 @@ const Contact = () => {
             <motion.div className="contact-form-container" variants={itemVariants}>
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name">{t.contact.form.name}</label>
                   <input
                     type="text"
                     id="name"
@@ -127,12 +130,12 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Your full name"
+                    placeholder={t.contact.form.namePlaceholder}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="email">{t.contact.form.email}</label>
                   <input
                     type="email"
                     id="email"
@@ -140,12 +143,12 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="your@email.com"
+                    placeholder={t.contact.form.emailPlaceholder}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subject">Subject</label>
+                  <label htmlFor="subject">{t.contact.form.subject}</label>
                   <input
                     type="text"
                     id="subject"
@@ -153,12 +156,12 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    placeholder="Project inquiry"
+                    placeholder={t.contact.form.subjectPlaceholder}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Message</label>
+                  <label htmlFor="message">{t.contact.form.message}</label>
                   <textarea
                     id="message"
                     name="message"
@@ -166,7 +169,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows="5"
-                    placeholder="Tell me about your project..."
+                    placeholder={t.contact.form.messagePlaceholder}
                   ></textarea>
                 </div>
 
@@ -178,12 +181,12 @@ const Contact = () => {
                   {isSubmitted ? (
                     <>
                       <CheckCircle size={20} />
-                      Message Sent!
+                      {t.contact.form.messageSent}
                     </>
                   ) : (
                     <>
                       <Send size={20} />
-                      Send Message
+                      {t.contact.form.send}
                     </>
                   )}
                 </button>

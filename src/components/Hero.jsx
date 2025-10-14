@@ -1,9 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 import './Hero.css'
 
 const Hero = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
+  
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -33,7 +38,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Kia Ora, I'm <span className="highlight">Tu</span>
+            {t.hero.greeting} <span className="highlight">{t.hero.name}</span>{language === 'mi' ? ' ahau' : ''}
           </motion.h1>
           
           <motion.p 
@@ -42,7 +47,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Full Stack Developer
+            {t.hero.title}
           </motion.p>
           
           <motion.p 
@@ -51,8 +56,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            I create beautiful, functional, and user-centered digital experiences.
-            Passionate about modern web technologies and clean code.
+            {t.hero.description}
           </motion.p>
 
           <motion.div 
@@ -67,10 +71,10 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="cta-button primary"
             >
-              View My Work
+              {t.hero.viewWork}
             </a>
             <button className="cta-button primary" onClick={downloadCV}>
-              Download CV
+              {t.hero.downloadCV}
             </button>
           </motion.div>
 
@@ -99,7 +103,7 @@ const Hero = () => {
             onClick={scrollToAbout}
           >
             <ArrowDown size={24} />
-            <span>Scroll to explore</span>
+            <span>{t.hero.scrollText}</span>
           </motion.div>
         </motion.div>
       </div>

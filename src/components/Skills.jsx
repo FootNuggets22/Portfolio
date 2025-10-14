@@ -1,10 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 import './Skills.css'
 
 const Skills = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
   const skills = {
-    "Frontend": [
+    [t.skills.categories.frontend]: [
       { name: "JavaScript", level: 95 },
       { name: "React", level: 90 },
       { name: "TypeScript", level: 85 },
@@ -13,7 +17,7 @@ const Skills = () => {
       { name: "Tailwind CSS", level: 85 },
       { name: "HTML", level: 80 }
     ],
-    "Backend": [
+    [t.skills.categories.backend]: [
       { name: "Node.js", level: 90 },
       { name: "Express.js", level: 90 },
       { name: "JSON", level: 90 },
@@ -24,7 +28,7 @@ const Skills = () => {
       { name: "Jest", level: 75 },
       { name: "MySQL", level: 70 }
     ],
-    "Tools & Technologies": [
+    [t.skills.categories.tools]: [
       { name: "Gemini AI", level: 90 },
       { name: "Git/GitHub", level: 90 },
       { name: "Docker", level: 70 },
@@ -69,8 +73,8 @@ const Skills = () => {
           animate="visible"
         >
           <motion.div className="section-header" variants={itemVariants}>
-            <h1>Skills & Technologies</h1>
-            <p>The tools and technologies I work with</p>
+            <h1>{t.skills.title}</h1>
+            <p>{t.skills.subtitle}</p>
           </motion.div>
 
           <div className="skills-grid">
@@ -106,7 +110,7 @@ const Skills = () => {
           </div>
 
           <motion.div className="certifications" variants={itemVariants}>
-            <h3>Certifications & Learning</h3>
+            <h3>{t.skills.certifications.title}</h3>
             <div className="cert-grid">
               <div className="cert-item">
                 <h4>Diploma in Digital Technology Development and Design</h4>
