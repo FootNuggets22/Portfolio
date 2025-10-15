@@ -154,7 +154,7 @@ const AIChatbot = () => {
 
 ABOUT TU MANUERA:
 - Bilingual programmer (Te Reo Māori & English)
-- Full-stack developer with 2+ years experience
+- Full-stack developer with 3+ years experience
 - 10+ completed projects, 100% client satisfaction
 - Email: tutanekaitapiata@gmail.com
 - GitHub: https://github.com/FootNuggets22
@@ -255,9 +255,9 @@ Assistant:`
     // Experience and background
     if (inputLower.includes('experience') || inputLower.includes('about') || inputLower.includes('background') || inputLower.includes('work')) {
       const experienceResponses = [
-        "Tu brings over 2 years of passionate development experience to the table! With 10+ completed projects and 100% client satisfaction, Tu has proven expertise in building quality applications. Tu values clean code, excellent user experience, and continuous learning. Tu is also bilingual in Te Reo Māori and English, bringing unique cultural perspective to development work. You can learn more in the About section!",
-        "Tu's background is quite impressive! As a bilingual developer fluent in both Te Reo Māori and English, Tu brings 2+ years of experience in full-stack development. Tu has successfully completed 10+ projects with perfect client satisfaction. Tu's approach focuses on clean, maintainable code and creating meaningful user experiences. The About section has more details about Tu's journey and values!",
-        "Tu has built a strong foundation with 2+ years in development and an impressive track record of 10+ successful projects. What makes Tu stand out is the commitment to quality - 100% client satisfaction speaks volumes! Tu combines technical skills with cultural understanding as a bilingual programmer, and values continuous learning and clean code practices. Check out the About section for the full story!"
+        "Tu brings over 3 years of passionate development experience to the table! With 10+ completed projects and 100% client satisfaction, Tu has proven expertise in building quality applications. Tu values clean code, excellent user experience, and continuous learning. Tu is also bilingual in Te Reo Māori and English, bringing unique cultural perspective to development work. You can learn more in the About section!",
+        "Tu's background is quite impressive! As a bilingual developer fluent in both Te Reo Māori and English, Tu brings 3+ years of experience in full-stack development. Tu has successfully completed 10+ projects with perfect client satisfaction. Tu's approach focuses on clean, maintainable code and creating meaningful user experiences. The About section has more details about Tu's journey and values!",
+        "Tu has built a strong foundation with 3+ years in development and an impressive track record of 10+ successful projects. What makes Tu stand out is the commitment to quality - 100% client satisfaction speaks volumes! Tu combines technical skills with cultural understanding as a bilingual programmer, and values continuous learning and clean code practices. Check out the About section for the full story!"
       ]
       return experienceResponses[Math.floor(Math.random() * experienceResponses.length)]
     }

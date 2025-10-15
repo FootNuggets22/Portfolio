@@ -64,7 +64,7 @@ const About = () => {
                 <div className="stat-card">
                   <User className="stat-icon" />
                   <div className="stat-content">
-                    <h4>2+</h4>
+                    <h4>3+</h4>
                     <p>{t.about.stats.experience}</p>
                   </div>
                 </div>

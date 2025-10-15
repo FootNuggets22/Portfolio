@@ -131,10 +131,17 @@
   padding: 8px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  z-index: 1001;
+  position: relative;
 }
 
 .menu-toggle:hover {
   background-color: var(--bg-secondary);
+}
+
+.menu-toggle:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
 
 @media (max-width: 768px) {
@@ -147,7 +154,12 @@
   }
 
   .menu-toggle {
-    display: block;
+    display: block !important;
+    order: 3;
+  }
+
+  .header-controls {
+    order: 2;
   }
 
   .nav {
@@ -164,6 +176,8 @@
     visibility: hidden;
     transition: all 0.3s ease;
     border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    order: 1;
   }
 
   .nav.nav-open {
@@ -184,5 +198,21 @@
 
   .logo-image {
     height: 50px;
+  }
+}
+
+/* Additional mobile support for smaller screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .menu-toggle {
+    display: block !important;
+    padding: 10px;
+  }
+  
+  .header-controls {
+    gap: 0.5rem;
   }
 }
