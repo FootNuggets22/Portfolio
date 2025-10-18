@@ -197,7 +197,11 @@
   }
 
   .logo-image {
-    height: 50px;
+    height: 32px;
+  }
+  
+  .logo {
+    padding: 1px;
   }
 }
 
@@ -205,6 +209,10 @@
 @media (max-width: 480px) {
   .container {
     padding: 0 0.5rem;
+  }
+  
+  .logo-image {
+    height: 28px;
   }
   
   .menu-toggle {
